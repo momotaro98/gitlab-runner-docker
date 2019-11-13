@@ -20,6 +20,13 @@ services:
     - DB_NAME=gitlabhq_production
     - DB_EXTENSION=pg_trgm
 
+  gitlab-runner:
+    restart: always
+    image: gitlab/gitlab-runner
+    volumes:
+    - ~/docker/gitlab/gitlab:/home/git/data:Z
+    - /var/run/docker.sock:/var/run/docker.sock
+
   gitlab:
     restart: always
     image: sameersbn/gitlab:12.2.1-1
