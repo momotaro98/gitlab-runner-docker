@@ -1,3 +1,17 @@
+you shoud use the command below when you register gitlab runner
+
+gitlab-runner register \
+    --non-interactive \
+    --name gitlab-runner \
+    --url "http://gitlab/" \
+    --clone-url "http://gitlab" \
+    --registration-token "<gitlab ci token>" \
+    --executor docker \
+    --docker-image "docker:stable" \
+    --tag-list <your tag> \
+    --docker-network-mode "docker-gitlab_default"
+
+
 [![Docker Repository on Quay.io](https://quay.io/repository/sameersbn/gitlab/status "Docker Repository on Quay.io")](https://quay.io/repository/sameersbn/gitlab)
 [![](https://images.microbadger.com/badges/image/sameersbn/gitlab.svg)](http://microbadger.com/images/sameersbn/gitlab "Get your own image badge on microbadger.com")
 
