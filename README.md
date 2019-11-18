@@ -5,10 +5,10 @@ gitlab-runner register \
     --name gitlab-runner \
     --url "http://gitlab/" \
     --clone-url "http://gitlab" \
-    --registration-token "<gitlab ci token>" \
+    --registration-token "${gitlab ci token}" \
     --executor docker \
     --docker-image "docker:stable" \
-    --tag-list <your tag> \
+    --tag-list ${your tag} \
     --docker-network-mode "docker-gitlab_default"
 
 
